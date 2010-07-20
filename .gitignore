@@ -1,0 +1,7 @@
+.installed.cfg
+bin/*
+downloads/*
+eggs/*
+include/*
+lib/*
+parts/*
