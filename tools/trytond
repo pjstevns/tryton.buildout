@@ -1,0 +1,9 @@
+#!/usr/bin/python
+#
+from trytond.server import TrytonServer
+
+if __name__ == '__main__':
+    s = TrytonServer()
+    s.run()
+	
+
