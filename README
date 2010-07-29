@@ -1,3 +1,32 @@
 
-apt-get install python-dev make gcc libc6-dev mercurial zlib1g-dev wget libpq-dev libsasl2-dev libldap2-dev
+Example buildout for the Tryton ERP system.
+
+copyright 2010, Paul J Stevens, paul@nfg.nl
+license: GPL-3
+
+For Debian based systems first install the pre-dependencies:
+
+apt-get install python-dev make gcc libc6-dev mercurial \
+	zlib1g-dev wget libpq-dev libsasl2-dev libldap2-dev
+
+
+First, check and edit buildout.cfg. Add eggs for additional 
+modules you wish to deploy. For development of modules, you 
+need to reference them in the 'develop' option and add them 
+to the eggs, i.e.:
+
+develop = 
+    src/trytond_project_mykind
+
+eggs = 
+    ...
+    trytond_project_mykind
+
+Next, run 'make' inside this directory. This will install
+all Tryton components, and also download, build and install
+PostgreSQL inside the sandbox.
+
+After 'make' has completed, you can do 'bin/supervisord' to
+start both Trytond and PostgreSQL inside the sandbox.
+
 

@@ -8,3 +8,5 @@ parts/*
 etc/*
 var/*
 *.swp
+develop-eggs/*
+src/*
