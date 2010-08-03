@@ -10,3 +10,4 @@ var/*
 *.swp
 develop-eggs/*
 src/*
+tools/tryton-dev/*
