@@ -7,8 +7,9 @@ bin/python:
 bin/buildout: bin/python
 	bin/easy_install zc.buildout
 
-devel:
-	test -d src/trytond || hg clone http://hg.tryton.org/trytond src/trytond
+devel: bin/python bin/buildout
+	test -d src || mkdir src
+	test -d src/trytond || hg clone http://hg.tryton.org/trytond src/trytond 
 	cd src && for module in `grep src/ ../devel.cfg|grep -v tryton|cut -f2 -d/`; do \
 		test -d $$module || hg clone http://hg.tryton.org/modules/$$module ; \
 	done
