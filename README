@@ -7,8 +7,8 @@ license: GPL-3
 For Debian based systems first install the pre-dependencies:
 
 apt-get install python-dev make gcc libc6-dev mercurial \
-	zlib1g-dev wget libpq-dev libsasl2-dev libldap2-dev
-
+	zlib1g-dev wget libpq-dev libsasl2-dev libldap2-dev \
+	libreadline-dev
 
 First, check and edit buildout.cfg. Add eggs for additional 
 modules you wish to deploy. For development of modules, you 

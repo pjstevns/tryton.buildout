@@ -2,7 +2,7 @@
 default: bin/python bin/buildout buildout
 
 bin/python:
-	virtualenv --no-site-packages .
+	virtualenv --no-site-packages --distribute .
 
 bin/buildout: bin/python
 	bin/easy_install zc.buildout
