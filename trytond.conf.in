@@ -8,4 +8,6 @@ db_password = ${tryton-config:db_password}
 verbose = True
 debug_mode = False
 data_path = ${buildout:directory}/var
+xmlrpc = True
+xmlport = 8069
 
