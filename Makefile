@@ -10,10 +10,10 @@ bin/buildout: bin/python
 devel: bin/python bin/buildout
 	test -d src || mkdir src
 	test -d src/trytond || hg clone http://hg.tryton.org/trytond src/trytond 
-	cd src && for module in `grep src/ ../devel.cfg|grep -v '#'|cut -f2 -d/`; do \
-		test -d $$module || hg clone http://hg.tryton.org/modules/$$module ; \
+	cd src && for module in `grep src/ ../devel.cfg|grep -v '#'|cut -f2 -d/|sed 's/trytond_//'`; do \
+		test -d trytond_$$module || hg clone http://hg.tryton.org/modules/$$module trytond_$$module; \
 	done
-	bin/buildout -v -c devel.cfg
+	bin/buildout -Nv -c devel.cfg
 
 update:
 	cd src/trytond && hg pull && hg merge || true
@@ -23,4 +23,8 @@ update:
 	bin/buildout -Nv -c devel.cfg
 
 buildout:
-	bin/buildout -v
+	bin/buildout -Nv -c base.cfg
+
+
+clean:
+	rm -rf bin/ include/ lib/ eggs/ develop-eggs/

@@ -11,3 +11,4 @@ var/*
 develop-eggs/*
 src/*
 tools/tryton-dev/*
+distribute-*.tar.gz
