@@ -10,17 +10,17 @@ apt-get install python-dev make gcc libc6-dev mercurial \
 	zlib1g-dev wget libpq-dev libsasl2-dev libldap2-dev \
 	libreadline-dev python-virtualenv
 
+Production:
+===========
+
 First, check and edit buildout.cfg. Add eggs for additional 
-modules you wish to deploy. For development of modules, you 
-need to reference them in the 'develop' option and add them 
-to the eggs, i.e.:
+modules you wish to deploy, i.e:
 
-develop = 
-    src/trytond_project_mykind
-
-eggs = 
-    ...
-    trytond_project_mykind
+[tryton]
+...
+modules = 
+	...
+	trytond_project_plan
 
 Next, run 'make' inside this directory. This will install
 all Tryton components, and also download, build and install
@@ -28,5 +28,24 @@ PostgreSQL inside the sandbox.
 
 After 'make' has completed, you can do 'bin/supervisord' to
 start both Trytond and PostgreSQL inside the sandbox.
+
+
+Development:
+============
+
+For development of modules, you need to reference them in the 
+'sources' option and add them to the modules, i.e.:
+
+[sources] 
+...
+trytond.modules.project_mykind = hg http://hg.trytond.org/modules/project_mykind full-path=src/trytond.project.mykind
+
+[tryton]
+...
+modules = 
+    ...
+    trytond_project_mykind
+
+Please excuse the convoluted setup that is caused by trytond.modules not being a namespace package.
 
 
