@@ -12,3 +12,4 @@ develop-eggs/*
 src/*
 tools/tryton-dev/*
 distribute-*.tar.gz
+.mr.developer.cfg
