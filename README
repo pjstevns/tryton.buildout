@@ -37,15 +37,12 @@ For development of modules, you need to reference them in the
 'sources' option and add them to the modules, i.e.:
 
 [sources] 
-...
-trytond.modules.project_mykind = hg http://hg.trytond.org/modules/project_mykind full-path=src/trytond.project.mykind
+trytond.modules.project_mykind = hg http://hg.trytond.org/modules/project_mykind
 
 [tryton]
-...
 modules = 
     ...
     trytond_project_mykind
 
-Please excuse the convoluted setup that is caused by trytond.modules not being a namespace package.
-
+See devel.cfg for an example
 
