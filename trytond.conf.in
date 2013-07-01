@@ -1,13 +1,11 @@
 [options]
-interface = ${tryton-config:interface}
-admin_passwd = ${tryton-config:admin_passwd}
-db_host = ${tryton-config:db_host}
-db_port = ${tryton-config:db_port}
-db_user = ${tryton-config:db_user}
-db_password = ${tryton-config:db_password}
+interface = ${trytond-config:interface}
+admin_passwd = ${trytond-config:admin_passwd}
+db_host = ${trytond-config:db_host}
+db_port = ${trytond-config:db_port}
+db_user = ${trytond-config:db_user}
+db_password = ${trytond-config:db_password}
 verbose = True
 debug_mode = False
 data_path = ${buildout:directory}/var
-xmlrpc = True
-xmlport = 8069
 

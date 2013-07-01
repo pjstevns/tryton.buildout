@@ -1,7 +1,7 @@
 
 Example buildout for the Tryton ERP system.
 
-copyright 2010, Paul J Stevens, paul@nfg.nl
+copyright 2013, Paul J Stevens, paul@nfg.nl
 license: GPL-3
 
 For Debian based systems first install the pre-dependencies:
@@ -44,5 +44,4 @@ modules =
     ...
     trytond_project_mykind
 
-See devel.cfg for an example
 
